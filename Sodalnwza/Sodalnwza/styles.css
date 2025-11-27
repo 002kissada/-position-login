@@ -1,0 +1,138 @@
+/* การรีเซ็ตและการตั้งค่า Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* พื้นหลังไล่สีน้ำเงินเข้ม */
+    overflow: hidden;
+}
+
+/* 1. พื้นหลังสำหรับ Glassmorphism */
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* สร้าง Background ที่ดูเป็นมิติ */
+    background: url('https://source.unsplash.com/random/1920x1080/?abstract,blue') no-repeat center center/cover;
+    filter: blur(10px); /* เอฟเฟกต์เบลอ */
+    z-index: -1;
+}
+
+/* 2. ตัวคอนเทนเนอร์ Login หลัก */
+.login-container {
+    background: rgba(255, 255, 255, 0.2); /* สีพื้นหลังใส */
+    border-radius: 20px;
+    padding: 40px;
+    width: 350px;
+    /* Glassmorphism Effect */
+    backdrop-filter: blur(10px); /* เอฟเฟกต์กระจกฝ้า */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+/* 3. หัวข้อ Login */
+.login-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #0d47a1; /* สีน้ำเงินเข้ม */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. ช่อง Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px; /* เว้นที่ให้ไอคอน */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* สีขาวกึ่งใส */
+    font-size: 1em;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #42a5f5; /* สีน้ำเงินอ่อนเมื่อโฟกัส */
+    box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.3);
+}
+
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #0d47a1; /* สีไอคอน */
+    font-size: 0.9em;
+}
+
+/* 5. ส่วนตัวเลือก Remember Me และ Forgot Password */
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: #0d47a1; /* เปลี่ยนสี Checkbox เป็นน้ำเงิน */
+}
+
+/* 6. ลิงก์ Forgot Password */
+.forgot-password {
+    color: #0d47a1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #1e88e5;
+}
+
+
+/* 7. ปุ่ม Login */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #2196f3, #0d47a1); /* ไล่สีน้ำเงิน */
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+    background: linear-gradient(45deg, #42a5f5, #1565c0); /* สีอ่อนลงเมื่อ Hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
